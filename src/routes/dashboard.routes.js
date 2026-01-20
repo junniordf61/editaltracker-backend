@@ -1,11 +1,12 @@
-import express from 'express';
-import { getDashboard } from '../controllers/dashboardController.js';
-import { authMiddleware } from '../middlewares/authMiddleware.js';
+import { Router } from 'express';
 
-const router = express.Router();
+const router = Router();
 
-router.get('/', getDashboard);
-
-router.get('/', authMiddleware, getDashboard);
+router.get('/', (req, res) => {
+  res.json({
+    dashboard: 'ok',
+    message: 'Dashboard route funcionando 🚀'
+  });
+});
 
 export default router;

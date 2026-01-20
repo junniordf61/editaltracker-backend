@@ -8,6 +8,11 @@ import notificacaoRoutes from './routes/notificacao.routes.js';
 
 const app = express();
 
+
+app.get('/', (req, res) => {
+  res.json({ status: 'API ONLINE 🚀' });
+});
+
 app.use(cors());
 app.use(express.json());
 app.use('/edital', editalRoutes);

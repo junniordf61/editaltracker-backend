@@ -1,15 +1,9 @@
 import { Router } from 'express';
-import { listarDisciplinas } from '../controllers/disciplinaController.js';
+import { listarDisciplinas as listarDisciplinasController } 
+  from '../controllers/disciplinaController.js';
 
-const router = Router();
+const router = Router();          // ✅ primeiro cria o router
 
-export async function listarDisciplinas(req, res) {
-  return res.json({ ok: true });
-}
-
-router.get('/', listarDisciplinas);
-
-
-
+router.get('/', listarDisciplinasController); // ✅ depois usa
 
 export default router;

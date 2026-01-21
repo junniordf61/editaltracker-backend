@@ -5,6 +5,7 @@ import dashboardRoutes from './routes/dashboard.routes.js';
 import cronogramaRoutes from './routes/cronograma.routes.js';
 import authRoutes from './routes/auth.routes.js';
 import notificacaoRoutes from './routes/notificacao.routes.js';
+import disciplinaRoutes from './routes/disciplina.routes.js';
 
 const app = express();
 
@@ -20,5 +21,6 @@ app.use('/dashboard', dashboardRoutes);
 app.use('/cronograma', cronogramaRoutes);
 app.use('/auth', authRoutes);
 app.use('/notificacoes', notificacaoRoutes);
+app.use('/disciplinas', disciplinaRoutes);
 
 export default app;

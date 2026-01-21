@@ -3,13 +3,26 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("DATABASE_URL")
 }
 
-model User {
+
+
+
+model Disciplina {
   id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
+  nome      String
+  topicos   Topico[]
   createdAt DateTime @default(now())
+}
+
+model Topico {
+  id            Int         @id @default(autoincrement())
+  nome          String
+  estudado      Boolean     @default(false)
+  horasEstudo   Float       @default(0)
+  disciplinaId  Int
+  disciplina    Disciplina  @relation(fields: [disciplinaId], references: [id])
 }

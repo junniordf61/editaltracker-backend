@@ -3,6 +3,9 @@
     "start": "npx prisma generate && node src/server.js",
     "dev": "nodemon src/server.js"
   },
+  "prisma": {
+  "seed": "node prisma/seed.js"
+},
   "dependencies": {
     "@prisma/client": "5.7.1",
     "bcryptjs": "^2.4.3",

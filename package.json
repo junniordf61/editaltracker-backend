@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "npx prisma generate && node src/server.js",
+    "build": "prisma generate && prisma migrate deploy",
+    "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },
   "prisma": {
